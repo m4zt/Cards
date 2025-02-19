@@ -2,7 +2,7 @@
 //  CardsApp.swift
 //  Cards
 //
-//  Created by Student on 2/13/25.
+//  Created by Student on 02/13/25.
 //
 
 import SwiftUI
@@ -13,8 +13,11 @@ struct CardsApp: App {
 
 	var body: some Scene {
 		WindowGroup {
-			CardsListView()
+			AppLoadingView()
 				.environmentObject(store)
+				.onAppear {
+					print(URL.documentsDirectory)
+				}
 		}
 	}
 }
